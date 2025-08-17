@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Social_Eye{% endblock %}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script defer src="/static/scripts.js"></script>
+</head>
+<body class="{% block body_class %}light{% endblock %}">
+    <nav class="navbar">
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+        <a href="/input" class="nav-link {% if request.path == '/input' %}active{% endif %}">Input</a>
+        <a href="/contact" class="nav-link {% if request.path == '/contact' %}active{% endif %}">Contact Us</a>
+        <button id="theme-toggle" class="btn">DARK MODE</button>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <p>© 2024 Social_Eye. All rights reserved.</p>
+    </footer>
+</body>
+</html>
