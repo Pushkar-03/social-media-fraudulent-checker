@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Input - Social_Eye{% endblock %}
+
+{% block content %}
+<header class="header">
+    <h1>Enter Social Media ID</h1>
+</header>
+<div class="content-box">
+    {% if error %}
+    <div class="alert">{{ error }}</div>
+    {% endif %}
+    <form id="input-form" action="/check" method="POST">
+        <label for="social_id">Social Media ID:</label>
+        <input type="number" name="social_id" id="social_id" placeholder="Enter ID" required>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <p>
+        Give the ID in a Range of 101-1000
+    </p>
+</div>
+{% endblock %}
