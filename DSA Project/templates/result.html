@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Result - Social_Eye{% endblock %}
+
+{% block content %}
+<header class="header">
+    <h1>Fraud Detection Result</h1>
+</header>
+<div class="content-box">
+    <div class="result-box">
+        <p><strong>Result:</strong> {{ result }}</p>
+        <p><strong>Clustering Coefficient (CC):</strong> {{ cc }}%</p>
+        {% if ef %}
+        <p><strong>Effective Followers (EF):</strong> {{ ef }}</p>
+        {% endif %}
+        <p><strong>Total IDs:</strong> {{ ids }}</p>
+    </div>
+    <img src="{{ graph_image }}" alt="Graph Image" class="graph-img">
+    <div class="btn-group">
+        <a href="/input" class="btn">Check Another ID</a>
+        <a href="/generate-report" class="btn">Generate Report</a>
+    </div>
+</div>
+{% endblock %}
